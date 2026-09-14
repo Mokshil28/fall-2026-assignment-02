@@ -57,7 +57,7 @@ export class TaxDeductionStrategy implements AuditStrategy {
     report += `Eligible Deductible Transactions:\n`;
 
     if (deductibleTransactions.length === 0) {
-      report += "None\n";
+      report += 'None\n';
     } else {
       deductibleTransactions.forEach((transaction) => {
         report += `${transaction.date} | ${transaction.category} | ${transaction.description} | $${Math.abs(transaction.amount).toFixed(2)}\n`;
