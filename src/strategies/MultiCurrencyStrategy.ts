@@ -20,7 +20,7 @@ export class MultiCurrencyStrategy implements AuditStrategy {
     // 3. Look up the exchange rate for the target currency (throw an error if not found in rates).
     const exchangeRate = exchangeRates.rates[targetCurrency];
     if (exchangeRate === undefined) {
-      throw new Error('Method not implemented.');
+      throw new Error(`Exchange rate for ${targetCurrency} not found.`);
     }
     // 4. Convert all transaction amounts to the target currency.
     const convertedTransactions = transactions.map((transaction) => ({
